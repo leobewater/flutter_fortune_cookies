@@ -85,13 +85,15 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              "Your fortune is:",
-              style: TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            Image.asset('assets/images/fortune_cookie.png',
+                width: 200, height: 200, fit: BoxFit.cover),
+            // const Text(
+            //   "Your fortune is:",
+            //   style: TextStyle(
+            //     fontSize: 19,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
             Card(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
