@@ -41,7 +41,27 @@ class _MyHomePageState extends State<MyHomePage> {
     "You will find a new friend tomorrow",
     "You will be rich",
     "Take a vacation",
-    "Adventure can be real happiness"
+    "Adventure can be real happiness",
+    "Opportunity knocks on your door when you least expect it, so always keep your eyes open.",
+    "Believe in the magic within you, for it has the power to transform your world.",
+    "Success is not measured by how high you climb, but by how many people you lift along the way.",
+    "Good things come to those who wait patiently and work persistently.",
+    "Your greatest strength lies in your ability to adapt to change.",
+    "The journey of a thousand miles begins with a single step; take it fearlessly.",
+    "A smile is the shortest distance between two people; spread joy wherever you go.",
+    "The key to unlocking doors of opportunity lies within your hands; use it wisely.",
+    "Wisdom is not attained by age alone but by the lessons learned along the way.",
+    "Embrace the challenges you face, for they are stepping stones to your success.",
+    "Love conquers all; let it guide your actions and decisions.",
+    "Your dreams are the blueprints of your destiny; pursue them with passion.",
+    "Kindness is a language that the deaf can hear and the blind can see.",
+    "Patience is not the ability to wait but the ability to keep a good attitude while waiting.",
+    "In every setback lies the seed of an even greater opportunity; keep moving forward.",
+    "The secret to happiness is not in doing what one likes, but in liking what one does.",
+    "Every adversity carries with it the seed of an equal or greater benefit.",
+    "The only way to do great work is to love what you do.",
+    "Success is not the key to happiness; happiness is the key to success.",
+    "The best way to predict your future is to create it; start today.",
   ];
 
   void _randomFortune() {
@@ -58,19 +78,25 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Flutter Demo Home Page"),
+        // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // title: Text("Flutter Demo Home Page"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Your fortune list",
+              "Your fortune is:",
+              style: TextStyle(
+                fontSize: 19,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            Text(
-              '${_currentFortune}',
-              style: Theme.of(context).textTheme.headlineMedium,
+            Card(
+              child: Text(
+                '${_currentFortune}',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
             ),
           ],
         ),
