@@ -94,10 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Card(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Text(
                   '${_currentFortune}',
-                  style: Theme.of(context).textTheme.headlineMedium,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
             ),
