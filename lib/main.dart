@@ -18,22 +18,19 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({super.key});
-
-  String _currentFortune = "";
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   String _currentFortune = "";
 
   final _fortuneList = [
@@ -70,12 +67,14 @@ class _MyHomePageState extends State<MyHomePage> {
     // review entire view
     setState(() {
       _currentFortune = _fortuneList[fortune];
+      debugPrint("State Change");
     });
-    print(_currentFortune);
+    debugPrint(_currentFortune);
   }
 
   @override
   Widget build(BuildContext context) {
+    debugPrint("Building the widget");
     return Scaffold(
       appBar: AppBar(
           // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -104,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ElevatedButton(
-                onPressed: _randomFortune, child: Text('Get Fortune')),
+                onPressed: _randomFortune, child: const Text('Get Fortune')),
           ],
         ),
       ),
