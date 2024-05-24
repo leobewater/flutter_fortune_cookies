@@ -1,8 +1,10 @@
-
 import 'package:flutter/material.dart';
+import 'package:good_app/providers/FortuneModel.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (BuildContext context) => FortuneModel(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -60,11 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
     "The best way to predict your future is to create it; start today.",
   ];
 
-
-
   @override
   Widget build(BuildContext context) {
     debugPrint("Building the widget");
+    final fortune =
+        Provider.of<FortuneModel>(context).getRandomFortune(_fortuneList);
+
     return Scaffold(
       appBar: AppBar(
           // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -87,13 +90,12 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  _currentFortune,
+                  fortune,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
             ),
-            ElevatedButton(
-                onPressed: _randomFortune, child: const Text('Get Fortune')),
+            ElevatedButton(onPressed: null, child: const Text('Get Fortune')),
           ],
         ),
       ),
