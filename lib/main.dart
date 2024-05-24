@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 
@@ -61,16 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "The best way to predict your future is to create it; start today.",
   ];
 
-  void _randomFortune() {
-    var random = Random();
-    int fortune = random.nextInt(_fortuneList.length);
-    // review entire view
-    setState(() {
-      _currentFortune = _fortuneList[fortune];
-      debugPrint("State Change");
-    });
-    debugPrint(_currentFortune);
-  }
+
 
   @override
   Widget build(BuildContext context) {
